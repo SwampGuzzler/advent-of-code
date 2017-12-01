@@ -1,0 +1,11 @@
+{
+  "name": "advent_of_code",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Lucas Cotner",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}
