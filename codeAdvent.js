@@ -12,3 +12,23 @@ exports.dayOne = function (digits) {
 
   return total;
 }
+
+exports.dayOnePartTwo = function (digits) {
+  var exclusiveNumbers = [];
+  var total = 0;
+
+  for (var k = 0; k < digits.length; k++) {
+    var halfWayDist = digits.length / 2;
+    if (k < halfWayDist) {
+      if (digits.charAt(k) === digits.charAt(k + halfWayDist)) {
+        total += parseInt(digits.charAt(k));
+      }
+    } else {
+      if (digits.charAt(k) === digits.charAt(k - halfWayDist)) {
+        total += parseInt(digits.charAt(k));
+      }
+    }
+  }
+
+  return total;
+}
