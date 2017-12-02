@@ -62,3 +62,24 @@ exports.dayTwo = function (spreadsheet) { // nestedArray
 
   return total;
 }
+
+exports.dayTwoPartTwo = function (spreadsheet) {
+  var total = 0;
+
+  for (var n = 0; n < spreadsheet.length; n++) {
+    var row = spreadsheet[n];
+
+    for (var m = 0; m < row.length; m++) {
+      var currentNumber = row[m];
+      for (var p = 0; p < row.length; p++) {
+        if (m !== p) {
+          if (currentNumber % row[p] === 0) {
+            total += (currentNumber / row[p]);
+          }
+        }
+      }
+    }
+  }
+
+  return total;
+}

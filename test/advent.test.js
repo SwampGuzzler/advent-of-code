@@ -80,7 +80,7 @@ describe('Day Two', function() {
     [5, 1, 9, 5],
     [7, 5, 3],
     [2, 4, 6, 8]
-  ]
+  ];
 
   it('should return 18 from our spreadsheet', function() {
     assert.equal(18, codeAdvent.dayTwo(spreadsheet));
@@ -88,5 +88,22 @@ describe('Day Two', function() {
 
   var checksum = codeAdvent.dayTwo(dayTwoSpreadsheet);
   console.log('checksum', checksum); //51833
+
+});
+
+describe('Day Two Part Two', function() {
+
+  var spreadsheet = [
+    [5, 9, 2, 8],
+    [9, 4, 7, 3],
+    [3, 8, 6, 5],
+  ];
+
+  it('should return 9 from our spreadsheet', function() {
+    assert.equal(9, codeAdvent.dayTwoPartTwo(spreadsheet));
+  });
+
+  var sumResults = codeAdvent.dayTwoPartTwo(dayTwoSpreadsheet);
+  console.log('sumResults', sumResults); //288
 
 });
