@@ -32,3 +32,33 @@ exports.dayOnePartTwo = function (digits) {
 
   return total;
 }
+
+exports.dayTwo = function (spreadsheet) { // nestedArray
+  var total = 0;
+
+  for (var l = 0; l < spreadsheet.length; l++) {
+    var smallest, largest;
+    var row = spreadsheet[l];
+
+    for (var m = 0; m < row.length; m++) {
+      if (!smallest) {
+        smallest = row[m];
+      } else if (row[m] < smallest) {
+        smallest = row[m];
+      }
+
+      if (!largest) {
+        largest = row[m];
+      } else if (row[m] > largest) {
+        largest = row[m];
+      }
+    }
+
+    var diff = largest - smallest;
+    total += diff;
+    smallest = undefined;
+    largest = undefined;
+  }
+
+  return total;
+}
