@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 exports.dayOne = function (digits) {
   var exclusiveNumbers = [];
   var total = 0;
@@ -82,4 +84,57 @@ exports.dayTwoPartTwo = function (spreadsheet) {
   }
 
   return total;
+}
+
+exports.dayThree = function (spreadsheet) {
+  var total = 0;
+
+
+
+  return total;
+}
+
+exports.dayFour = function (passphrase) {
+  var invalidCount = 0;
+  passphrase.forEach((phrase, j) => {
+    var phrases = phrase.split(' ');
+
+    for (var p = 0; p < phrases.length; p++) {
+      if (phrases.indexOf(phrases[p]) !== p) {
+        invalidCount++;
+        return;
+      }
+    }
+  });
+
+  console.log('passphrase.length', passphrase.length);
+  console.log('invalidCount', invalidCount);
+
+  return passphrase.length - invalidCount;
+}
+
+exports.dayFourPartTwo = function (passphrase) {
+  var invalidCount = 0;
+  passphrase.forEach((phrase, j) => {
+    var phrases = phrase.split(' ');
+    var sortedPhrases = [];
+
+    for (var p = 0; p < phrases.length; p++) {
+      var sortedPhrase = phrases[p].split('').sort().join('');
+      sortedPhrases.push(sortedPhrase);
+    }
+
+    for (var q = 0; q < sortedPhrases.length; q++) {
+      if (sortedPhrases.indexOf(sortedPhrases[q]) !== q) {
+        invalidCount++;
+        return;
+      }
+    }
+    
+  });
+
+  console.log('passphrase.length', passphrase.length);
+  console.log('invalidCount', invalidCount);
+
+  return passphrase.length - invalidCount;
 }
