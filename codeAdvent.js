@@ -182,3 +182,66 @@ exports.dayFivePartTwo = function (array) {
   return stepCount;
 
 }
+
+exports.daySix = function (array) {
+  var scenarios = [];
+  let beenDereBefo = false;
+
+  const initialArr = [];
+  array.forEach(a => {
+    initialArr.push(a);
+  });
+
+  scenarios.push(initialArr);
+
+  compareCurrentScenarioToPast = currentScenario => {
+    let seenThisBefore = false;
+    scenarios.forEach(scenario => {
+      const scenarioString = scenario.toString();
+      const currentScenarioString = currentScenario.toString();
+
+      if (scenarioString === currentScenarioString) {
+        seenThisBefore = true;
+      }
+
+    });
+
+    return seenThisBefore;
+  }
+
+  while (beenDereBefo === false) {
+    let blocksToAllocate = Math.max(...array);
+    const startingIndex = array.indexOf(blocksToAllocate);
+
+    let index = startingIndex + 1;
+
+    array[startingIndex] = 0;
+
+    while (blocksToAllocate > 0) {
+      if (index === array.length) {
+        index = 0;
+      }
+      array[index]++;
+
+      blocksToAllocate--;
+      index++;
+    }
+
+    if (compareCurrentScenarioToPast(array)) {
+      beenDereBefo = true;
+    }
+
+    const newArr = [];
+    array.forEach(a => {
+      newArr.push(a);
+    });
+
+    if (!beenDereBefo) {
+      scenarios.push(newArr);
+    }
+  }
+
+
+  return scenarios.length;
+
+}

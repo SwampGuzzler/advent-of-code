@@ -185,6 +185,16 @@ describe('Day Five Part Two', function() {
   });
 
   var instructionsTwo = codeAdvent.dayFivePartTwo(config.dayFiveData);
-  console.log('instructionsTwo', instructionsTwo); //355965
+  // console.log('instructionsTwo', instructionsTwo); //355965
+
+});
+
+describe('Day Six', function() {
+
+  it('[0, 2, 7, 0] takes me 5 redistributions to get out', function() {
+    assert.equal(5, codeAdvent.daySix([0, 2, 7, 0]));
+  });
+  // var reallocation = codeAdvent.daySix([4, 10, 4, 1, 8, 4, 9, 14, 5, 1, 14, 15, 0, 15, 3, 5]);
+  // console.log('reallocation', reallocation); //4074
 
 });
