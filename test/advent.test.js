@@ -46,8 +46,8 @@ describe('Day One', function() {
     assert.equal(9, codeAdvent.dayOne('91212129'));
   });
 
-  var total = codeAdvent.dayOne(dayOneTotal);
-  console.log('total', total); //1044
+  // var total = codeAdvent.dayOne(dayOneTotal);
+  // console.log('total', total); //1044
 
 });
 
@@ -73,8 +73,8 @@ describe('Day One, Part Two', function() {
     assert.equal(4, codeAdvent.dayOnePartTwo('12131415'));
   });
 
-  var total = codeAdvent.dayOnePartTwo(dayOneTotal);
-  console.log('totalPartTwo', total); //1054
+  // var total = codeAdvent.dayOnePartTwo(dayOneTotal);
+  // console.log('totalPartTwo', total); //1054
 
 });
 
@@ -89,8 +89,8 @@ describe('Day Two', function() {
     assert.equal(18, codeAdvent.dayTwo(spreadsheet));
   });
 
-  var checksum = codeAdvent.dayTwo(dayTwoSpreadsheet);
-  console.log('checksum', checksum); //51833
+  // var checksum = codeAdvent.dayTwo(dayTwoSpreadsheet);
+  // console.log('checksum', checksum); //51833
 
 });
 
@@ -105,8 +105,8 @@ describe('Day Two Part Two', function() {
     assert.equal(9, codeAdvent.dayTwoPartTwo(spreadsheet));
   });
 
-  var sumResults = codeAdvent.dayTwoPartTwo(dayTwoSpreadsheet);
-  console.log('sumResults', sumResults); //288
+  // var sumResults = codeAdvent.dayTwoPartTwo(dayTwoSpreadsheet);
+  // console.log('sumResults', sumResults); //288
 
 });
 
@@ -135,8 +135,8 @@ describe('Day Four', function() {
     assert.equal(1, codeAdvent.dayFour(['aa bb cc dd ee']));
   });
 
-  var validCount = codeAdvent.dayFour(config.dayFourData);
-  console.log('validCount', validCount); //386
+  // var validCount = codeAdvent.dayFour(config.dayFourData);
+  // console.log('validCount', validCount); //386
 
 });
 
@@ -162,7 +162,29 @@ describe('Day Four Part Two', function() {
     assert.equal(0, codeAdvent.dayFourPartTwo(['oiii ioii iioi iiio']));
   });
 
-  var validCount = codeAdvent.dayFourPartTwo(config.dayFourData);
-  console.log('validCount Part Two', validCount); //386
+  // var validCount = codeAdvent.dayFourPartTwo(config.dayFourData);
+  // console.log('validCount Part Two', validCount); //386
+
+});
+
+describe('Day Five', function() {
+
+  it('[3, 0, 1, -3] takes me 5 steps to get out', function() {
+    assert.equal(5, codeAdvent.dayFive([0, 3, 0, 1, -3]));
+  });
+
+  // var instructions = codeAdvent.dayFive(config.dayFiveData);
+  // console.log('instructions', instructions); //355965
+
+});
+
+describe('Day Five Part Two', function() {
+
+  it('[3, 0, 1, -3] takes me 10 steps to get out', function() {
+    assert.equal(10, codeAdvent.dayFivePartTwo([0, 3, 0, 1, -3]));
+  });
+
+  var instructionsTwo = codeAdvent.dayFivePartTwo(config.dayFiveData);
+  console.log('instructionsTwo', instructionsTwo); //355965
 
 });

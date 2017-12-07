@@ -107,9 +107,6 @@ exports.dayFour = function (passphrase) {
     }
   });
 
-  console.log('passphrase.length', passphrase.length);
-  console.log('invalidCount', invalidCount);
-
   return passphrase.length - invalidCount;
 }
 
@@ -130,11 +127,58 @@ exports.dayFourPartTwo = function (passphrase) {
         return;
       }
     }
-    
+
   });
 
-  console.log('passphrase.length', passphrase.length);
-  console.log('invalidCount', invalidCount);
-
   return passphrase.length - invalidCount;
+}
+
+exports.dayFive = function (array) {
+  var weOut = false
+  var stepCount = 0;
+
+  var currentIndex = 0;
+
+  while (weOut === false) {
+    stepCount++;
+    var pastIndex = currentIndex;
+
+    currentIndex += array[currentIndex];
+
+    array[pastIndex]++;
+
+    if (currentIndex >= array.length) {
+      weOut = true;
+    }
+  }
+
+  return stepCount;
+
+}
+
+exports.dayFivePartTwo = function (array) {
+  var weOut = false
+  var stepCount = 0;
+
+  var currentIndex = 0;
+
+  while (weOut === false) {
+    stepCount++;
+    var pastIndex = currentIndex;
+
+    currentIndex += array[currentIndex];
+
+    if (array[pastIndex] >= 3) {
+      array[pastIndex]--;
+    } else {
+      array[pastIndex]++;
+    }
+
+    if (currentIndex >= array.length) {
+      weOut = true;
+    }
+  }
+
+  return stepCount;
+
 }
